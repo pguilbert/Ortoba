@@ -10,30 +10,58 @@ app.controller('TeamController', function ($scope, TeamService) {
     });
 
     $scope.add = function(team){
-        console.log(team);
+        $scope.IsLoading = true;
         if(team !== undefined){
-            $scope.teams.push({
-                name : team.name,
-                city : team.city,
-                score : 0
-            });
+            TeamService.create(team.name, team.city).success(function(){
+                $scope.teams.push({
+                    name : team.name,
+                    city : team.city,
+                    score : 0
+                });
 
-            team.name = "";
-            team.city = "";
+                team.name = "";
+                team.city = "";
+            }).then(function(){ $scope.IsLoading = false; });
+
         }
     }
 });
 
 
 app.factory('TeamService', function($http) {
+    // Default encoding post message, for php operation.
+    $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
     return {
         getAll: function() {
-            //return the promise directly.
             return $http.get('./core.php/team/all')
                 .then(function(result) {
-                    //resolve the promise as the data
                     return result.data;
                 });
+        },
+        create : function(name, city){
+            var param = $.param({name: name, city: city});
+            return $http.post('./core.php/team/create', param);
         }
     }
+});
+
+app.directive('capitalize', function() {
+    return {
+        require: 'ngModel',
+        link: function(scope, element, attrs, modelCtrl) {
+            var capitalize = function(inputValue) {
+                if(typeof(inputValue)!=="string"){ return; }
+
+                var capitalized = inputValue.toUpperCase();
+                if(capitalized !== inputValue) {
+                    modelCtrl.$setViewValue(capitalized);
+                    modelCtrl.$render();
+                }
+                return capitalized;
+            }
+            modelCtrl.$parsers.push(capitalize);
+            capitalize(scope[attrs.ngModel]);
+        }
+    };
 });
