@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+
+    <script src="js/init.js"></script>
+    <script src="js/Services.js"></script>
+    <script src="js/MatchController.js"></script>
+</head>
+<body ng-controller="MatchController">
+<br/>
+<div class="container">
+    <div>
+        <h1>Ortoba <small>Liste des matchs</small></h1>
+    </div>
+
+    <table class="table table-bordered">
+        <tr>
+            <th class="col-xs-5">Equipe 1</th>
+            <th class="col-xs-2">Points</th>
+            <th class="col-xs-5">Equipe 2</th>
+        </tr>
+        <tr ng-repeat="match in matchs">
+            <td>{{match.teamId1}}</td>
+            <td>{{match.scoreTeam1}} -  {{match.scoreTeam2}}</td>
+            <td>{{match.teamId2}}</td>
+        </tr>
+    </table>
+    <a href="./team.html" class="pull-right" >Liste des équipes</a>
+    <div class="progress progress-striped active" ng-show="IsLoading">
+        <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <span class="sr-only">Loading</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
