@@ -1,12 +1,9 @@
-'use strict';
-
-var app = angular.module('app', []);
 
 app.controller('TeamController', function ($scope, TeamService) {
     $scope.IsLoading = true;
-    TeamService.getAll().then(function(data){
+    TeamService.getAll().then(function(result){
         $scope.IsLoading = false;
-        $scope.teams = data;
+        $scope.teams = result.data;
     });
 
     $scope.add = function(team){
@@ -23,25 +20,6 @@ app.controller('TeamController', function ($scope, TeamService) {
                 team.city = "";
             }).then(function(){ $scope.IsLoading = false; });
 
-        }
-    }
-});
-
-
-app.factory('TeamService', function($http) {
-    // Default encoding post message, for php operation.
-    $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-
-    return {
-        getAll: function() {
-            return $http.get('./core.php/team/all')
-                .then(function(result) {
-                    return result.data;
-                });
-        },
-        create : function(name, city){
-            var param = $.param({name: name, city: city});
-            return $http.post('./core.php/team/create', param);
         }
     }
 });
