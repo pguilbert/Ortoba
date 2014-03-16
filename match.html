@@ -37,7 +37,35 @@
             <td>{{match.scoreTeam1}} -  {{match.scoreTeam2}}</td>
             <td>{{match.teamname2}}</td>
         </tr>
+        <tr>
+            <td>{{match.team1.name}}</td>
+            <td>{{match.scoreTeam1}} -  {{match.scoreTeam2}}</td>
+            <td>{{match.team2.name}}</td>
+        </tr>
     </table>
+    <form class="form-inline" ng-submit="add(match)">
+        <table class="table table-bordered">
+            <tr>
+                <td class="col-xs-6">
+                    <select  ng-model="match.team1" ng-options="team.name for team in teams" class="form-control">
+                        <option value="">-- Équipe 1 --</option>
+                    </select>
+                    <input ng-model="match.scoreTeam1" class="form-control" type="number"/>
+                </td>
+                <td class="col-xs-6">
+                    <select  ng-model="match.team2" ng-options="team.name for team in teams" class="form-control">
+                        <option value="">-- Équipe 2 --</option>
+                    </select>
+                    <input ng-model="match.scoreTeam2" class="form-control" type="number"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                <input class="btn btn-primary" style="width: 100%;" type="submit" value="+" />
+                </td>
+            </tr>
+        </table>
+    </form>
     <a href="./team.html" class="pull-right" >Liste des équipes</a>
     <div class="progress progress-striped active" ng-show="IsLoading">
         <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">

@@ -25,9 +25,9 @@ app.factory('MatchService', function($http) {
         getAll: function() {
             return $http.get('./core.php/match/all');
         },
-        create : function(name, city){
-            var param = $.param({name: name, city: city});
-            return $http.post('./core.php/team/create', param);
+        create : function(scoreTeam1, scoreTeam2, teamId1, teamId2){
+            var param = $.param({scoreTeam1: scoreTeam1, scoreTeam2: scoreTeam2, teamId1: teamId1, teamId2: teamId2});
+            return $http.post('./core.php/match/create', param);
         }
     }
 });

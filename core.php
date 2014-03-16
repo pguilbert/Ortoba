@@ -29,4 +29,17 @@ $app->get('/match/all', function () {
     echo json_encode($team->fetchAll(PDO::FETCH_ASSOC));
 });
 
+$app->post('/match/create', function () {
+    $app = Slim::getInstance();
+    $request = $app->request();
+    $scoreTeam1 = $request->post('scoreTeam1');
+    $scoreTeam2 = $request->post('scoreTeam2');
+    $teamId1 = $request->post('teamId1');
+    $teamId2 = $request->post('teamId2');
+    //echo "INSERT INTO meeting (scoreTeam1, scoreTeam2, teamId1, teamId2) VALUES ('".$scoreTeam1."', '".$scoreTeam2."',  '".$teamId1."', '".$teamId2."')";
+    $db = DbHelper::getDb();
+    $db->exec("INSERT INTO meeting (scoreTeam1, scoreTeam2, teamId1, teamId2) VALUES ('".$scoreTeam1."', '".$scoreTeam2."',  '".$teamId1."', '".$teamId2."')");
+
+});
+
 $app->run();
