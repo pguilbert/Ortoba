@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Sam 15 Mars 2014 à 17:01
+-- Généré le: Lun 17 Mars 2014 à 14:38
 -- Version du serveur: 5.6.12-log
--- Version de PHP: 5.4.16
+-- Version de PHP: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,15 +37,45 @@ CREATE TABLE IF NOT EXISTS `meeting` (
   PRIMARY KEY (`id`),
   KEY `teamId1` (`teamId1`),
   KEY `teamId2` (`teamId2`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Contenu de la table `meeting`
+-- Déclencheurs `meeting`
 --
+DROP TRIGGER IF EXISTS `calcule_score`;
+DELIMITER //
+CREATE TRIGGER `calcul_score` AFTER INSERT ON `meeting`
+ FOR EACH ROW BEGIN
+	IF NEW.scoreTeam1 > NEW.scoreTeam2 THEN
+		UPDATE team
+		SET score = score + 3
+		WHERE id = NEW.teamId1;
 
-INSERT INTO `meeting` (`id`, `scoreTeam1`, `scoreTeam2`, `teamId1`, `teamId2`) VALUES
-(1, 10, 3, 1, 2),
-(2, 6, 20, 8, 4);
+		UPDATE team
+		SET score = score + 1
+		WHERE id = NEW.teamId2;
+
+	ELSEIF NEW.scoreTeam1 < NEW.scoreTeam2 THEN
+		UPDATE team
+		SET score = score + 1
+		WHERE id = NEW.teamId1;
+
+		UPDATE team
+		SET score = score + 3
+		WHERE id = NEW.teamId2;
+
+	ELSEIF NEW.scoreTeam1 = NEW.scoreTeam2 THEN
+		UPDATE team
+		SET score = score + 2
+		WHERE id = NEW.teamId1;
+
+		UPDATE team
+		SET score = score + 2
+		WHERE id = NEW.teamId2;
+	END IF;
+END
+//
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -68,9 +98,9 @@ CREATE TABLE IF NOT EXISTS `team` (
 INSERT INTO `team` (`id`, `name`, `city`, `score`) VALUES
 (1, 'HAWKS', 'ATLANTA', 0),
 (2, 'BULLS', 'CHICAGO ', 0),
-(3, 'PISTONS', 'DETROIT ', 3),
-(4, 'CLIPPERS', 'LOS ANGELES ', 9),
-(5, 'THUNDER', 'OKLAHOMA CITY ', 3),
+(3, 'PISTONS', 'DETROIT ', 0),
+(4, 'CLIPPERS', 'LOS ANGELES ', 0),
+(5, 'THUNDER', 'OKLAHOMA CITY ', 0),
 (7, 'JAZZ', 'UTAH', 0),
 (8, 'CELTICS', 'BOSTON', 0),
 (9, 'CAVALIERS', 'CLEVELAND', 0),
