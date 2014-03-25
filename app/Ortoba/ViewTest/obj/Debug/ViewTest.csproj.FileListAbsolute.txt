@@ -8,3 +8,8 @@ C:\wamp\www\BitBucket\ortoba\app\Ortoba\ViewTest\bin\Debug\Ortoba.Data.pdb
 C:\wamp\www\BitBucket\ortoba\app\Ortoba\ViewTest\bin\Debug\Newtonsoft.Json.xml
 C:\wamp\www\BitBucket\ortoba\app\Ortoba\ViewTest\obj\Debug\ViewTest.exe
 C:\wamp\www\BitBucket\ortoba\app\Ortoba\ViewTest\obj\Debug\ViewTest.pdb
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\ViewTest\bin\Debug\System.Net.Http.Extensions.dll
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\ViewTest\bin\Debug\System.Net.Http.Primitives.dll
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\ViewTest\bin\Debug\System.Net.Http.Extensions.xml
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\ViewTest\bin\Debug\System.Net.Http.Primitives.xml
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\ViewTest\obj\Debug\ViewTest.csproj.App.config
