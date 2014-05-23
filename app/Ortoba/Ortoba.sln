@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ortoba.view", "Ortoba.view\Ortoba.view.csproj", "{C40A4DFD-3907-414B-97A5-BF727C14F365}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ortoba", "Ortoba.view\Ortoba.csproj", "{C40A4DFD-3907-414B-97A5-BF727C14F365}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ortoba.Data", "Ortoba.Data\Ortoba.Data.csproj", "{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewTest", "ViewTest\ViewTest.csproj", "{D2BE73C2-BA8F-4904-B5E5-C8D5C3F2CD73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,26 @@ Global
 		{C40A4DFD-3907-414B-97A5-BF727C14F365}.Release|x86.ActiveCfg = Release|x86
 		{C40A4DFD-3907-414B-97A5-BF727C14F365}.Release|x86.Build.0 = Release|x86
 		{C40A4DFD-3907-414B-97A5-BF727C14F365}.Release|x86.Deploy.0 = Release|x86
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Debug|ARM.ActiveCfg = Debug|ARM
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Debug|ARM.Build.0 = Debug|ARM
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Debug|x86.ActiveCfg = Debug|x86
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Debug|x86.Build.0 = Debug|x86
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Release|ARM.ActiveCfg = Release|ARM
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Release|ARM.Build.0 = Release|ARM
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Release|x86.ActiveCfg = Release|x86
+		{D7B0A3D2-58C2-40FE-A80B-F89435C24D91}.Release|x86.Build.0 = Release|x86
+		{D2BE73C2-BA8F-4904-B5E5-C8D5C3F2CD73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2BE73C2-BA8F-4904-B5E5-C8D5C3F2CD73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2BE73C2-BA8F-4904-B5E5-C8D5C3F2CD73}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D2BE73C2-BA8F-4904-B5E5-C8D5C3F2CD73}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D2BE73C2-BA8F-4904-B5E5-C8D5C3F2CD73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2BE73C2-BA8F-4904-B5E5-C8D5C3F2CD73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2BE73C2-BA8F-4904-B5E5-C8D5C3F2CD73}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D2BE73C2-BA8F-4904-B5E5-C8D5C3F2CD73}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

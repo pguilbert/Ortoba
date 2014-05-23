@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Ortoba.view.Resources;
+using Ortoba.Data;
 
 namespace Ortoba.view
 {
@@ -17,6 +18,10 @@ namespace Ortoba.view
         public MainPage()
         {
             InitializeComponent();
+
+            var teams = ApiManagement.Instance.GetTeams("http://www.lascauxmartial.fr/ortoba/index.html");
+
+            team_lb.ItemsSource = teams;
 
             // Exemple de code pour la localisation d'ApplicationBar
             //BuildLocalizedApplicationBar();

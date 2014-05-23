@@ -46,10 +46,10 @@
         </StackPanel>
 
         <!--ContentPanel - placez tout contenu supplémentaire ici-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-        </Grid>
-
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,60,10,-60"/>
+        <ListBox x:Name="team_lb" Grid.Row="1" Height="607" VerticalAlignment="Top">
+            
+        </ListBox>
         <!--Supprimez les commentaires pour voir une grille d'alignement qui vous aidera à vous assurer que vos contrôles sont
             alignés sur les limites communes.  L'image a une marge supérieure de -32px pour
             tenir compte de la barre d'état système. Attribuez-lui la valeur 0 (ou supprimez la marge)

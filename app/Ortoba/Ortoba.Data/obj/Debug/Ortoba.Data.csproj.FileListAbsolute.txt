@@ -1,0 +1,13 @@
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\obj\Debug\Ortoba.Data.csprojResolveAssemblyReference.cache
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\Ortoba.Data.dll
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\Ortoba.Data.pdb
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\Newtonsoft.Json.dll
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\System.Net.Http.dll
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\System.Net.Http.Extensions.dll
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\System.Net.Http.Primitives.dll
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\Newtonsoft.Json.xml
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\System.Net.Http.xml
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\System.Net.Http.Extensions.xml
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\Bin\Debug\System.Net.Http.Primitives.xml
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\obj\Debug\Ortoba.Data.dll
+C:\wamp\www\BitBucket\ortoba\app\Ortoba\Ortoba.Data\obj\Debug\Ortoba.Data.pdb
