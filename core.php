@@ -57,11 +57,19 @@ $app->post('/matchs', function () {
     $teamId1 = $request->post('teamId1');
     $teamId2 = $request->post('teamId2');
     //echo "INSERT INTO meeting (scoreTeam1, scoreTeam2, teamId1, teamId2) VALUES ('".$scoreTeam1."', '".$scoreTeam2."',  '".$teamId1."', '".$teamId2."')";
-    $db = DbHelper::getDb();
-    $db->exec("INSERT INTO meeting (scoreTeam1, scoreTeam2, teamId1, teamId2) VALUES ('".$scoreTeam1."', '".$scoreTeam2."',  '".$teamId1."', '".$teamId2."')");
 
-    $response->addStatusMessage(new Status("success", "Match ajouté !"));
+    if($teamId1==$teamId2){
+        $response->addStatusMessage(new Status("danger", "Il s'agit d'une seule équipe !"));
+    } else {
+        $db = DbHelper::getDb();
+        $db->exec("INSERT INTO meeting (scoreTeam1, scoreTeam2, teamId1, teamId2) VALUES ('".$scoreTeam1."', '".$scoreTeam2."',  '".$teamId1."', '".$teamId2."')");
 
+        $response->addStatusMessage(new Status("success", "Match ajouté !"));
+    }
+
+    if($response->getError()){
+        $app->response->setStatus(400);
+    }
     echo json_encode($response);
 });
 
