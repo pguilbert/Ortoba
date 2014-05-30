@@ -1,7 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
-require '/Helpers/DbHelper.php';
+require 'Helpers/DbHelper.php';
 
 use \Slim\Slim;
 use \Helpers\DbHelper;
