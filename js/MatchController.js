@@ -6,12 +6,12 @@ app.controller('MatchController', function ($scope, MatchService, TeamService) {
     $scope.IsLoading = true;
     MatchService.getAll().then(function(result){
         $scope.IsLoading = false;
-        $scope.matchs = result.data;
+        $scope.matchs = result.data.result;
     });
 
     TeamService.getAll().then(function(result){
         $scope.IsLoading = false;
-        $scope.teams = result.data;
+        $scope.teams = result.data.result;
     });
 
     $scope.add = function(match){

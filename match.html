@@ -73,5 +73,15 @@
         </div>
     </div>
 </div>
+
+
+<div class="message">
+    <div ng-repeat="message in messages" class="alert alert-dismissable  alert-{{message.level}}">
+        <button ng-click="messages.unset(message)" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{message.message }}
+    </div>
+</div>
+
+
 </body>
 </html>

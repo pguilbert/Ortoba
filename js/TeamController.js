@@ -3,7 +3,7 @@ app.controller('TeamController', function ($scope, TeamService) {
     $scope.IsLoading = true;
     TeamService.getAll().then(function(result){
         $scope.IsLoading = false;
-        $scope.teams = result.data;
+        $scope.teams = result.data.result;
     });
 
     $scope.add = function(team){

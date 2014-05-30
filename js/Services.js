@@ -8,11 +8,11 @@ app.factory('TeamService', function($http) {
 
     return {
         getAll: function() {
-            return $http.get('./core.php/team/all');
+            return $http.get('./core.php/teams');
         },
         create : function(name, city){
             var param = $.param({name: name, city: city});
-            return $http.post('./core.php/team/create', param);
+            return $http.post('./core.php/teams', param);
         }
     }
 });
@@ -23,11 +23,11 @@ app.factory('MatchService', function($http) {
 
     return {
         getAll: function() {
-            return $http.get('./core.php/match/all');
+            return $http.get('./core.php/matchs');
         },
         create : function(scoreTeam1, scoreTeam2, teamId1, teamId2){
             var param = $.param({scoreTeam1: scoreTeam1, scoreTeam2: scoreTeam2, teamId1: teamId1, teamId2: teamId2});
-            return $http.post('./core.php/match/create', param);
+            return $http.post('./core.php/matchs', param);
         }
     }
 });
