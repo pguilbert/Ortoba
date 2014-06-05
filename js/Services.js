@@ -31,3 +31,17 @@ app.factory('MatchService', function($http) {
         }
     }
 });
+
+app.factory('CityService', function($http) {
+    // Default encoding post message, for php operation.
+    $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
+    return {
+        getAll: function() {
+            return $http.get('./core.php/cities');
+        },
+        getMatchByCity : function(idCity){
+            return $http.get('./core.php/cities/'+ idCity +'/matchs');
+        }
+    }
+});

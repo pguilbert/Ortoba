@@ -26,6 +26,15 @@
         <h1>Ortoba <small>Liste des matchs</small></h1>
     </div>
 
+    <div class="row">
+        <select class="form-control" ng-model="city" ng-options="city.name for city in cities" class="form-control">
+            <option value="">-- Toutes les villes --</option>
+        </select>
+        <a href="#" ng-click="refresh()" class="pull-right">Actualiser</a>
+    </div>
+
+    <br/>
+
     <table class="table table-bordered">
         <tr>
             <th class="col-xs-5">Equipe 1</th>

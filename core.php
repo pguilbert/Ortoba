@@ -73,4 +73,28 @@ $app->post('/matchs', function () {
     echo json_encode($response);
 });
 
+
+$app->get('/cities', function () {
+    $response = new Response();
+
+    $db = DbHelper::getDb();
+    $team = $db->query("SELECT * FROM city");
+
+    $response->setResult($team->fetchAll(PDO::FETCH_ASSOC));
+
+    echo json_encode($response);
+});
+
+
+$app->get('/cities/:id/matchs', function ($id) {
+    $response = new Response();
+
+    $db = DbHelper::getDb();
+    $team = $db->query("SELECT meeting.id, team1.name AS teamname1, team2.name AS teamname2, scoreTeam1, scoreTeam2 FROM meeting, team AS team1, team AS team2 WHERE team1.id=teamId1 AND team2.id=teamId2 AND meeting.city_id=$id");
+
+    $response->setResult($team->fetchAll(PDO::FETCH_ASSOC));
+
+    echo json_encode($response);
+});
+
 $app->run();

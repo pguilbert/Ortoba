@@ -2,11 +2,16 @@
  * Created by Paul on 3/15/14.
  */
 
-app.controller('MatchController', function ($scope, MatchService, TeamService) {
+app.controller('MatchController', function ($scope, MatchService, TeamService, CityService) {
     $scope.IsLoading = true;
     MatchService.getAll().then(function(result){
         $scope.IsLoading = false;
         $scope.matchs = result.data.result;
+    });
+
+    CityService.getAll().then(function(result){
+        $scope.IsLoading = false;
+        $scope.cities = result.data.result;
     });
 
     TeamService.getAll().then(function(result){
@@ -32,5 +37,20 @@ app.controller('MatchController', function ($scope, MatchService, TeamService) {
             }).then(function(){ $scope.IsLoading = false; });
 
         }
+    }
+
+    $scope.refresh = function(){
+        if($scope.city==null){
+            TeamService.getAll().then(function(result){
+                $scope.IsLoading = false;
+                $scope.matchs = result.data.result;
+            });
+        } else {
+            CityService.getMatchByCity($scope.city.id).then(function(result){
+                $scope.IsLoading = false;
+                $scope.matchs = result.data.result;
+            });
+        }
+
     }
 });
